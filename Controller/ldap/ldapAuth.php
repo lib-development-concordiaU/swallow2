@@ -2,13 +2,13 @@
 Class LDAPAuth {
     static function netnameLogin($netname_in,$password) {
         // ldap setup
-        $ldap_host = "ldaps://v-ldap.concordia.ca";
-        $ldap_dn = "OU=People,DC=concordia,DC=ca";
-        $base_dn = "DC=concordia,DC=ca";
-        $ldap_usr_dom = "@concordia.ca";
+        $ldap_host = "";
+        $ldap_dn = "";
+        $base_dn = "";
+        $ldap_usr_dom = "";
         $ldap = ldap_connect($ldap_host, 636);
-        $bind_username = "lib-sduser";
-        $bind_password = "C0nu1455";
+        $bind_username = "";
+        $bind_password = "";
     
         $ldap = ldap_connect($ldap_host, 636);
         ldap_set_option($ldap, LDAP_OPT_PROTOCOL_VERSION,3);
