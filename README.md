@@ -13,5 +13,5 @@ The most distinctive characteristic of the Swallow architecture is the decouplin
 [The repository wiki](https://github.com/lib-development-concordiaU/swallow2/wiki) has the full documentation. 
 
 ## Publications
-  Camlot, Jason [(ORCID)](https://orcid.org/0000-0002-1378-6562), Neugebauer, Tomasz [(ORCID)](https://orcid.org/0000-0002-9743-5910) and Berrizbeitia, Francisco [(ORCID)](https://orcid.org/0000-0002-1542-8435) (2020) Dynamic Systems for Humanities Audio Collections : The Theory and Rationale of Swallow.  In: DH 2020 (Digital Humanities 2020 Virtual Conference), July 23, 2020, Ottawa, Canada.     
+  Camlot, Jason [(ORCID)](https://orcid.org/0000-0002-1378-6562), Neugebauer, Tomasz [(ORCID)](https://orcid.org/0000-0002-9743-5910) and Berrizbeitia, Francisco [(ORCID)](https://orcid.org/0000-0002-1542-8435) (2020) [Dynamic Systems for Humanities Audio Collections : The Theory and Rationale of Swallow](https://spectrum.library.concordia.ca/id/eprint/987014/).  In: DH 2020 (Digital Humanities 2020 Virtual Conference), July 23, 2020, Ottawa, Canada.     
 
