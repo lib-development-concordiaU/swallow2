@@ -1,0 +1,26 @@
+<?php
+include "global.config.php";
+
+/*------------------------------------------------------------
+GLOBAL DATABASE CONFIGURATION
+------------------------------------------------------------*/
+$username = "";
+$password ="";
+$host = "";
+$dbname = "";
+
+/* -------------------------------------------------------- */
+$conn = new mysqli($host, $username, $password, $dbname);
+
+if (mysqli_connect_error()) {
+    die('Connect Error (' . mysqli_connect_errno() . ') '
+            . mysqli_connect_error());
+}
+
+$conn->set_charset('utf8');
+
+session_start();
+if(!isset($_SESSION['currentSchema'])){
+    $_SESSION['currentSchema'] = $defaultSchema;
+ }
+?>

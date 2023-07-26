@@ -1,0 +1,10 @@
+{
+    "name":"class",
+    "version":"1",
+    "fields":[ 
+        {
+            "name": "description",
+            "type":"longtext"
+         }
+    ]
+}

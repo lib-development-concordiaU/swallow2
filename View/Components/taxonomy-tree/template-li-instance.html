@@ -1,0 +1,8 @@
+<li id="{li-id}" class='class-tree-li-instance' >
+    <span id="{li-id}-expand-icon" class="glyphicon {li-expand-icon} class-tree-li-icon" aria-hidden="true" onclick="toggleInstance('{instanceid}')"></span>
+    {li-text}   
+    <span class="glyphicon glyphicon-pencil class-tree-li-icon" style="{display}" aria-hidden="true" onclick="editInstance('{instanceid}')"></span>
+    <span class="glyphicon glyphicon-duplicate class-tree-li-icon" style="{display}"" aria-hidden="true" onclick="duplicateInstance('{instanceid}')"></span>
+    <span class="glyphicon glyphicon-trash class-tree-li-icon" style="{display}" aria-hidden="true" onclick="deleteInstance('{instanceid}')"></span>
+    {children}
+</li>

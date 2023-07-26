@@ -1,0 +1,8 @@
+<?php
+$ldapAunthentication = false;
+$defaultSchema = "";
+$GLOBALS['availableSchemas'] = ['','','',''];
+$GLOBALS['smtpServer'] = "";
+$GLOBALS['baseURL'] = '';
+$GLOBALS['serviceUserID'] = 1;
+?>

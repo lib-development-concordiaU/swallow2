@@ -1,0 +1,41 @@
+{
+    "name":"element",
+    "schema_version" : "template",
+    
+    "steps":[        
+    
+        {
+            "name": "Item_Description",
+            "type":"single",
+            "help":"",
+            "fields":[
+                {
+                    "name": "title",
+                    "type":"longtext"
+                },
+    
+                {
+                    "name":"image",
+                    "type":"uploadFile"
+                },
+    
+                {
+                    "name": "description",
+                    "type":"longtext"
+                },
+
+                {
+                    "name": "link",
+                    "type":"shorttext"
+                },
+
+                {
+                    "name": "category",
+                    "type":"shorttext",
+                    "multiple":"yes"
+                }
+            ]
+        }
+    ]
+    
+}

@@ -1,0 +1,16 @@
+{
+   "version":"1",
+   "hierarchy":[
+       {
+           "label":"Level 1",
+           "definition":"class.json",
+           "sub_classes":[
+				{
+				"label":"Level 2",
+				"definition":"sub_class.json",
+				"sub_classes":[]
+				}
+			]
+       }
+   ] 
+}

@@ -1,0 +1,38 @@
+{
+    "source file type": "JSON",
+    "source schema": "Scuttle JSON file",
+    "target schema": "link",
+    "fieldmap":[
+        {
+            "source_field":"author",
+            "target_field":"Cataloguer.email",
+            "type":"single"
+        },
+        {
+            "source_field":"class",
+            "target_field":"Class.id",
+            "type":"single"
+        },
+        {
+            "source_field":"title",
+            "target_field":"Item_Description/title",
+            "type":"single"
+        },
+        {
+            "source_field":"description",
+            "target_field":"Item_Description/description",
+            "type":"single"
+        },
+        {
+            "source_field":"URL",
+            "target_field":"Item_Description/link",
+            "type":"single"
+        },
+        {
+            "source_field":"categories",
+            "target_field":"Item_Description/category",
+            "type":"multiple"
+        }
+
+    ]
+}
