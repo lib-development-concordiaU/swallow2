@@ -78,7 +78,14 @@ $( "#collection_id" ).change(function() {
     }
 
     //let' safe first the rest of the values
-    saveChanges('stepForm',false);
+    if(steptype == "multiple"){
+      //remove the . from the parentid
+      const parentidForm = parentid.replace(/\./g, '');
+      saveChanges('fid'+parentidForm,false);
+    }else{
+      saveChanges('stepForm',false);
+    }
+    
 
     $.ajax({
       // The URL for the request
@@ -104,7 +111,6 @@ $( "#collection_id" ).change(function() {
   } 
 
   function saveChanges(id,showAlert){
-    
     $.ajax({
       // The URL for the request
       url: "Controller/item-save-step.php",
@@ -118,7 +124,6 @@ $( "#collection_id" ).change(function() {
       // the response is passed to the function
       success: function( data ) {
 
-        console.log(data);
         
         var response = jQuery.parseJSON(data);
         if(response.errorMgs == ""){

@@ -13,6 +13,7 @@ class Item extends db{
     public $metadata = [];
     public $conn;
     public $query_total;
+    public $export;
     public $locked;
     public $create_date;
     public $last_modified;
@@ -56,6 +57,7 @@ class Item extends db{
                     if($element['id'] == $parentid){
                         $element[$path2][]=$keyValueArray;
                         //make the element is properly formated to avoid json incompatibility issues (special charcarters)
+                        
                         $this->metadata[$path][$cont] = $element;
                     }
                     $cont++;
@@ -140,7 +142,7 @@ class Item extends db{
 
 
     function select($id){
-        $sql = "SELECT id,title,cataloguer_id,class_id,schema_definition, CAST(metadata as CHAR) as metadata, locked, create_date,last_modified  FROM item WHERE id = ".$id;
+        $sql = "SELECT id,title,cataloguer_id,class_id,schema_definition, CAST(metadata as CHAR) as metadata, locked, export, create_date,last_modified  FROM item WHERE id = ".$id;
 		
         $result =  $this->conn->query($sql);
         if($result != false){
@@ -156,8 +158,11 @@ class Item extends db{
 
 
     function exists($in_title,$in_class_id){
-        //escape the single quotes in the title
-        $in_title = str_ireplace("'","\'",$in_title);
+        //escape the single quotes in the title only if they are not escaped
+        $in_title = str_replace("\\'", "'", $in_title); // Unescape any escaped single quotes
+        $in_title = str_replace("'", "\\'", $in_title); // Escape single quotes
+        
+        
         $sql = "SELECT id FROM item WHERE title = '".trim($in_title)."' and class_id = ".$in_class_id;
         $result =  $this->conn->query($sql);
         if($result == false){
@@ -180,8 +185,9 @@ class Item extends db{
         $cleaned = str_ireplace( "\\t", "\\\\t", $cleaned ); // TN
    
         //remove single quotes
+        $cleaned = str_ireplace("\\'", "'",$cleaned );
         $cleaned = str_ireplace("\'", "'",$cleaned );
-        $cleaned = str_ireplace("'", "\\'",$cleaned );
+        $cleaned = str_ireplace("'", "\'",$cleaned );
 
         //make sure the backslashes are properly escapeds        
         $cleaned = str_ireplace('\\\"','\"',$cleaned);
@@ -199,8 +205,9 @@ class Item extends db{
         $title = str_ireplace("'", "\'",$title); 
 
 
-        $sql = "UPDATE item  SET  title = '".$title."', cataloguer_id = ".$this->cataloguer_id.", class_id = ".$this->class_id.", schema_definition = '".$this->schema_definition."',  metadata = '".$this->prepareJson($jsonStr)."' , last_modified = '".$date->format('Y-m-d H:i:s')."', locked = ".$this->locked." WHERE id = ".$this->id;
-    
+        $sql = "UPDATE item  SET  title = '".$title."', cataloguer_id = ".$this->cataloguer_id.", class_id = ".$this->class_id.", schema_definition = '".$this->schema_definition."',  metadata = '".$this->prepareJson($jsonStr)."' , last_modified = '".$date->format('Y-m-d H:i:s')."', locked = ".$this->locked.", export = " .$this->export. " WHERE id = ".$this->id;
+        
+
         $result =  $this->conn->query($sql);
 
         return $result;
@@ -214,7 +221,8 @@ class Item extends db{
             $this->title = $this->list[$this->index]["title"];
             $this->cataloguer_id = $this->list[$this->index]["cataloguer_id"];
             $this->class_id = $this->list[$this->index]["class_id"];
-            $this->schema_definition = $this->list[$this->index]["schema_definition"];
+            $this->schema_definition = $this->list[$this->index]["schema_definition"];        
+            $this->export = $this->list[$this->index]["export"];
             $this->locked = $this->list[$this->index]["locked"];
             $this->create_date = $this->list[$this->index]["create_date"];
             $this->last_modified = $this->list[$this->index]["last_modified"];
@@ -233,7 +241,7 @@ class Item extends db{
 
         }
 
-        $sql = "SELECT id,title,cataloguer_id,class_id,locked,schema_definition,create_date,last_modified, CAST(metadata as CHAR) as metadata  FROM item LIMIT $limit" ;
+        $sql = "SELECT id,title,cataloguer_id,class_id,locked, export, schema_definition,create_date,last_modified, CAST(metadata as CHAR) as metadata  FROM item LIMIT $limit" ;
 		
         $result =  $this->conn->query($sql);
 
@@ -251,7 +259,7 @@ class Item extends db{
 
     function selectLatests($limit = 10){
 
-        $sql = "SELECT id,title,cataloguer_id,class_id,locked,schema_definition,create_date,last_modified, CAST(metadata as CHAR) as metadata  FROM item ORDER BY create_date DESC LIMIT $limit " ;
+        $sql = "SELECT id,title,cataloguer_id,class_id,locked,export, schema_definition,create_date,last_modified, CAST(metadata as CHAR) as metadata  FROM item ORDER BY create_date DESC LIMIT $limit " ;
 		
         $result =  $this->conn->query($sql);
 
@@ -285,7 +293,7 @@ class Item extends db{
             $offset = ($page -1) * $page_size;
             $limit = " LIMIT $offset,$page_size";
         }else{
-           $limit = " LIMIT 1000";
+           $limit = " LIMIT 10000";
         }
 
         $conditions = '';
@@ -297,19 +305,19 @@ class Item extends db{
       
             $operators = array('AND','OR');
             foreach ($tokens as $token){
-               // $whereClause .= "(";
+     
                 if($token != ''){
-                    
+                    $whereClause .= "(";
                     if(in_array(trim($token),$operators) ){
                         $whereClause .= " ".$token." ";
                     } else{
                         $token = str_ireplace("'","\'",$token);
-                        $whereClause .= "(JSON_SEARCH(item.metadata,'all','%".trim($token)."%') IS NOT NULL )";
+                        $whereClause .= "JSON_SEARCH(item.metadata,'all','%".trim($token)."%') IS NOT NULL ";
                     }
 
-                    
+                    $whereClause .= ")";
                 }
-              //  $whereClause .= ")";
+
                 
             }
         }
@@ -355,7 +363,7 @@ class Item extends db{
             $orderbystr = '';
         }
 
-        $sql = "SELECT DISTINCT item.id AS id,item.title AS title,item.cataloguer_id as cataloguer_id,item.class_id as class_id,item.schema_definition as schema_definition, CAST(item.metadata as CHAR) as metadata, item.locked as locked, item.create_date as create_date, item.last_modified as last_modified FROM item,class $whereClause $conditions  $orderbystr  $limit";
+        $sql = "SELECT DISTINCT item.id AS id,item.title AS title,item.cataloguer_id as cataloguer_id,item.class_id as class_id,item.schema_definition as schema_definition, CAST(item.metadata as CHAR) as metadata, item.locked as locked, item.export as export, item.create_date as create_date, item.last_modified as last_modified FROM item,class $whereClause $conditions  $orderbystr  $limit";
 
        //echo($sql);
         $result =  $this->conn->query($sql);

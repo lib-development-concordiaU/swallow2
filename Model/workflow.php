@@ -10,6 +10,7 @@ class Workflow {
     
 
     function load($url){
+        
         $contents = file_get_contents($url); 
         //change encoding of $contents to  utf-8
         $contents = mb_convert_encoding($contents, 'UTF-8', 'UTF-8');

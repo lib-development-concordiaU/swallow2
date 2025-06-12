@@ -49,7 +49,16 @@ $objWorkflow->load('../Definitions/'.$objItem->schema_definition.'/workflow.json
             }else{
                 $lockedTxt = "Lock";
             }
+
+            if($objItem->export == 1){
+                $exportTxt = "Hide in export";
+            }else{
+                $exportTxt = "Show in export";
+            }
         ?>    
+        <li class='light-menu-li lock-button'>  
+            <a href="#" onclick = "toggleExport('<?php echo($objItem->id)?>')"><?php echo($exportTxt)?></a>
+        </li>
         <li class='light-menu-li lock-button'>  
             <a href="#" onclick = "toggleLock('<?php echo($objItem->id)?>')"><?php echo($lockedTxt)?></a>
         </li>

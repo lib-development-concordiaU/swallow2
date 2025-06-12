@@ -35,6 +35,7 @@ function createRecord($cataloguer_info,$class_id,$title,$schema_definition,$meta
 
     if($objCataloguer->total > 0 and $class_id > 0){
         $objItem = new Item($conn);
+        $title = str_replace("\\'", "'", $title); // Unescape any escaped single quotes
         //find if there's another item with the same title
         $itemExists = $objItem->exists($title,$class_id);
 

@@ -1,8 +1,9 @@
 <?php
+/*
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+*/
 
 require_once "../Model/db.config.php";
 require_once "../Model/item.php";
@@ -118,6 +119,7 @@ if($_POST['stepType'] == 'single'){
 
     foreach($_POST as $key => $value) {
         if($key != 'step' and $key != 'itemid'  and $key != 'stepType' and strpos($key,'ignore') === false ){
+            
             $element[$key] = $value;
         }
     }
@@ -133,21 +135,23 @@ if($_POST['stepType'] == 'single'){
                     }
                 }
 
-            // if there's a multiple fiels it must also be preserved
-            foreach($originalElement as $key => $value){
-                if( is_array($originalElement[$key]) ){
-                //is a multiple field
-                    $element[$key] = $value;
+                // if there's a multiple fiels it must also be preserved
+                foreach($originalElement as $key => $value){
+                    if( is_array($originalElement[$key]) ){
+                    //is a multiple field
+                        $element[$key] = $value;
+                    }
                 }
+            
             }
             
         }
     }
-        $objItem->deleteElement($stepname,$element['id']);
-    }
-        $objItem->addElementMultiple($stepname,$element);
+    $objItem->deleteElement($stepname,$element['id']);
+    $objItem->addElementMultiple($stepname,$element);
     
 }
+
 
 
 if($objItem->schema_definition == ''){

@@ -9,6 +9,23 @@ require_once "../Model/log.php";
 isLogged($conn);
 
 
+function isJson($string) {
+    if(!is_null($string) && !is_numeric($string) && !is_bool($string)){
+        json_decode($string);
+        return (json_last_error() == JSON_ERROR_NONE);
+    }else{
+        return false;
+    }
+    
+}
+
+function renderJson($name,$json,$id){
+    echo("
+        <label for='".$name."' class='col-sm-4'>$name</label>
+        <textarea type='text' class='form-control' id='".$id."' name='".$name."' rows='10'>".$json."</textarea>
+    ");
+}
+
 function renderTextfield($name,$in_value){
 
     $label = explode('-',$name);
@@ -16,11 +33,17 @@ function renderTextfield($name,$in_value){
     if(is_array($in_value) ){
         $in_value = '';
     }
-    
-    echo("
+
+    if(isJson($in_value)){
+        renderJson($name,$in_value,$name);
+    }else{
+        echo("
         <label for='".$name."' class='col-sm-4'>".$label[0]."</label>
-        <input type='text' class='form-control' id='".$name."' name='".$name."' value=\"".$in_value."\">
+        <input type='text' class='form-control' id='".$name."' name='".$name."' value=\"". $in_value."\">
         ");
+    }
+    
+    
 
 }
 
@@ -29,7 +52,7 @@ function renderTextarea($name,$in_value){
     echo("   
         <label for='".$name."' class='col-sm-4'>$name</label>
         <textarea type='text' class='form-control' id='".$name."' name='".$name."' rows='10'>".$in_value."</textarea>
-");
+    ");
 
     if($name == 'title'){
         if(is_null($in_value) ){
@@ -50,12 +73,19 @@ function renderLookupConvert($name,$url,$in_value,$id){
         $in_value = '';
     }
 
-    echo("
+    if(isJson($in_value)){
+        renderJson($name,$in_value,$id.$name);
+        echo ("
+            <span class='glyphicon glyphicon-edit btn btn-primary' aria-hidden='true' data-toggle='modal' data-target='#lookupModal' onclick='loadLookup(\"". $url."\",\"".$id."".$name ."\")'></span>
+            ");
+    }else{
+        echo("
 
-        <label for='".$name."' class='col-sm-4'>$label[0]</label>
-        <textarea type='text' rows=10 class='form-control' id='".$id."".$name."' name='".$name."'>".$in_value."</textarea>
-        <span class='glyphicon glyphicon-edit btn btn-primary' aria-hidden='true' data-toggle='modal' data-target='#lookupModal' onclick='loadLookup(\"". $url."\",\"".$id."".$name ."\")'></span>
-    ");
+            <label for='".$name."' class='col-sm-4'>$label[0]</label>
+            <textarea type='text' rows=10 class='form-control' id='".$id."".$name."' name='".$name."'>".$in_value."</textarea>
+            <span class='glyphicon glyphicon-edit btn btn-primary' aria-hidden='true' data-toggle='modal' data-target='#lookupModal' onclick='loadLookup(\"". $url."\",\"".$id."".$name ."\")'></span>
+        ");
+    }
 }
 
 
@@ -206,7 +236,6 @@ function renderField($field,$value,$id='',$renderMultiple = true){
 }
 
 
-
 function renderForm($conn,$stepName,$itemid){
 
     $objItem = new Item($conn);
@@ -234,12 +263,15 @@ function renderForm($conn,$stepName,$itemid){
                 if(is_array($values)){
                     echo("<div class='fields-multiple-group'>");
                     foreach($values as $value){
-                        echo("
-                            <div id=".$value['id'].">
-                                <label class='col-sm-4'></label>
-                                <div class='fields-multiple-outbox'>".$value['value']."<span class='fields-multiple-outbox-btn' onclick=\"removeMultipleFieldValue(  '$itemid','$stepName','$field->name','".$value['id']."','0','".$step->type."')\">X</span></div>  
-                            </div>
-                        ");
+                        if(isset($value['id'])){
+                            
+                            echo("
+                                <div id=".$value['id'].">
+                                    <label class='col-sm-4'></label>
+                                    <div class='fields-multiple-outbox'>".$value['value']."<span class='fields-multiple-outbox-btn' onclick=\"removeMultipleFieldValue(  '$itemid','$stepName','$field->name','".$value['id']."','0','".$step->type."')\">X</span></div>  
+                                </div>
+                            ");
+                        }
         
                     }
                     echo("</div>");
@@ -299,9 +331,6 @@ function  renderList($conn,$stepName,$itemid){
     $objWorkflow->load('../Definitions/'.$objItem->schema_definition.'/workflow.json');
     $fields = $objWorkflow->getFields($stepName);
     $step = $objWorkflow->getStep($stepName);
-
-   
-
     $elements = $objItem->getElement($stepName);
     $elements = sortMultipleFieldList($elements);
 
@@ -498,7 +527,6 @@ function loadhelp(in_url){
 function loadLookup(url, id){
     document.getElementsByName('lookupframe')[0].src = url+"?id="+id;
 }
-
 function saveCallback(){
     //check if the save function is implemented
 

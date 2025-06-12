@@ -39,10 +39,15 @@ $breadcrumbs .= $objClass->label;
             $objFormfield = new Formfield('shorttext',"uri","URI",$objClass->uri);
             $objFormfield->render();
 
+
             foreach($objClass->objMetadata->getFields() as $field){
                 $objFormfield = new Formfield($field['type'],str_replace(" ","_",$field['name']),$field['name'],$objClass->objMetadata->getValue($field['name']));
                 $objFormfield->render();
             }
+
+            $objFormfield = new Formfield('dropdown',"export","Export",$objClass->export,
+            [['value' => '1','label' => 'Yes'],['value' => '0','label' => 'No']]);
+            $objFormfield->render();
 
         ?>
 

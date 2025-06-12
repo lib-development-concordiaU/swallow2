@@ -9,6 +9,7 @@ $objClass = new Clase($conn);
 $objClass->select($_POST['classid']);
 $objClass->label= $_POST['label'];
 $objClass->uri = $_POST['uri'];
+$objClass->export = $_POST['export'];
 
 $fields = $objClass->objMetadata->getFields();
 foreach($fields as $field){

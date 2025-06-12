@@ -42,7 +42,7 @@ function filter(page){
     const schema = $("#f_schema").val();
     const selectedClass = $("#selectedClass").val();
 
-    $("#main").load("View/items.php?cataloguer="+cataloguer+"&selectedClass="+selectedClass+"&metadataquery="+btoa(encodeURIComponent(query))+"&page="+page+"&orderby="+orderby+"&schema="+schema);
+    $("#main").load("View/items.php?cataloguer="+cataloguer+"&selectedClass="+selectedClass+"&metadataquery="+btoa(unescape(encodeURIComponent(query)))+"&page="+page+"&orderby="+orderby+"&schema="+schema);
 }
 
 function query(page){
@@ -52,7 +52,7 @@ function query(page){
     const selectedClass = $("#selectedClass").val();
    // console.log(query);
 
-     $("#main").load("View/items.php?cataloguer="+cataloguer+"&selectedClass="+selectedClass+"&metadataquery="+btoa(encodeURIComponent(query))+"&page="+page);
+     $("#main").load("View/items.php?cataloguer="+cataloguer+"&selectedClass="+selectedClass+"&metadataquery="+btoa(unescape(encodeURIComponent(query)))+"&page="+page);
 }
 
 function deletedataset(){

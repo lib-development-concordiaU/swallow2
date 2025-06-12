@@ -11,6 +11,7 @@ class Clase extends db{
 	public $schemaDefinition;
 	public $objMetadata = NULL;
 	public $parentID;
+	public $export;
 	public $ancentry = [];	
 
     public function create($definition = '',$parent_id = 0){
@@ -25,7 +26,7 @@ class Clase extends db{
 			$this->label = $this->list[$this->index]["label"];
 			$this->uri = $this->list[$this->index]["URI"];
 			$this->schemaDefinition = $this->list[$this->index]["schema_definition"];
-			
+			$this->export = $this->list[$this->index]["export"];
 			$this->parentID = $this->list[$this->index]["parent_id"];
 
 			if( $this->list[$this->index]["metadata"] == NULL ){
@@ -38,6 +39,7 @@ class Clase extends db{
 			$this->label = '';
 			$this->uri = '';
 			$this->schemaDefinition = '';
+			$this->export = 0;
 			$this->parentID = 0;	
 		}
     }
@@ -116,7 +118,7 @@ class Clase extends db{
 
 		
 		
-        $sql = "UPDATE class SET label ='".$this->label."', URI='".$this->uri."', schema_definition ='".$this->schemaDefinition."', metadata = '".$this->prepareJson($this->objMetadata->getJson())."', parent_id = ".$this->parentID." where id = ".$this->id;
+        $sql = "UPDATE class SET label ='".$this->label."', URI='".$this->uri."', schema_definition ='".$this->schemaDefinition."', metadata = '".$this->prepareJson($this->objMetadata->getJson())."', parent_id = ".$this->parentID.", export = ".$this->export." where id = ".$this->id;
 
 		$result =  $this->conn->query($sql);
         return $result;

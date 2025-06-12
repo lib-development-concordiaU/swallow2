@@ -10,7 +10,7 @@ class Metadata {
         $this->conn = $in_conn;
 
         if($schemaPath != NULL){
-            $contents = file_get_contents('../Definitions/'.$schemaPath); 
+            $contents = file_get_contents($GLOBALS['baseURL'].'/Definitions/'.$schemaPath); 
             //change encoding of $contents to  utf-8
             $contents = mb_convert_encoding($contents, 'UTF-8', 'UTF-8');
             $this->schemaArray = json_decode($contents,true);

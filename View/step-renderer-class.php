@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 require_once "../Model/db.config.php";
 require_once "../Model/session.php";
 require_once "../Model/clase.php";

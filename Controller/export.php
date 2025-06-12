@@ -126,53 +126,62 @@ $objCataloguer = new Cataloguer($conn);
 
 
 $fulldataset = [];
-
 for($i = 0; $i < $objItem->total;$i++){
     $record = [];
     $objItem->go($i);
-    $objCataloguer = new Cataloguer($conn);
-    $record["schema"] = "Swallow JSON";
-    $record["schema_definition"] = $objItem->schema_definition;
-    $record["swallow_id"] = $objItem->id;
-    $record["create_date"] = $objItem->create_date;
-    $record["last_modified"] = $objItem->last_modified;
+    if($objItem->export == true){
+        $objCataloguer = new Cataloguer($conn);
+        $record["schema"] = "Swallow JSON";
+        $record["schema_definition"] = $objItem->schema_definition;
+        $record["swallow_id"] = $objItem->id;
+        $record["create_date"] = $objItem->create_date;
+        $record["last_modified"] = $objItem->last_modified;
 
+        
+        $objCataloguer->select($objItem->cataloguer_id);
+        $record["cataloguer"]["name"] = $objCataloguer->name;
+        $record["cataloguer"]["lastname"] = $objCataloguer->lastname;
+      //  $record["cataloguer"]["email"] = $objCataloguer->email;
+
+
+
+    // --------------------------------------------------------------------------------------
+    //------------------- Get the classification information --------------------------------
+    // --------------------------------------------------------------------------------------
+
+        $objClass = new Clase($conn);
+        $objClass->select($objItem->class_id);
     
-    $objCataloguer->select($objItem->cataloguer_id);
-    $record["cataloguer"]["name"] = $objCataloguer->name;
-    $record["cataloguer"]["lastname"] = $objCataloguer->lastname;
-    $record["cataloguer"]["email"] = $objCataloguer->email;
+        if($objClass->export){
+            $record["classification"][] = array_merge($objClass->getMetadataArray(),["class_name"=>getClassNameFromSchemafile($objClass->schemaDefinition)]); 
+            
+            $objClass->getAncentry();
+            $temp = new Clase($conn);
 
-//  
+            $export = true;
+            foreach($objClass->ancentry as $ancestor){
+                if($export){
+                    $temp->select($ancestor["id"]);
+                    if($temp->export == 0){
+                        $export = false;
+                    }else{
+                        $record["classification"][] = array_merge($temp->getMetadataArray(),["class_name"=>getClassNameFromSchemafile($temp->schemaDefinition)]);
+                    }       
+                }   
+            }
+
+            if($export){
+                if($objItem->metadata != NULL){
+                    $fulldataset[] = $record + prepareMetadata($objItem,$conn);
+                }else{
+                    $fulldataset[] = $record + [];
+                } 
+            }
 
 
-// --------------------------------------------------------------------------------------
-//------------------- Get the classification information --------------------------------
-// --------------------------------------------------------------------------------------
-
-    $objClass = new Clase($conn);
-    $objClass->select($objItem->class_id);
-  
-   
-   $record["classification"][] = array_merge($objClass->getMetadataArray(),["class_name"=>getClassNameFromSchemafile($objClass->schemaDefinition)]);
-   
-
-    $objClass->getAncentry();
-    $temp = new Clase($conn);
-
-    foreach($objClass->ancentry as $ancestor){
-       $temp->select($ancestor["id"]);
-       //var_dump($temp->schemaDefinition);
-       $record["classification"][] = array_merge($temp->getMetadataArray(),["class_name"=>getClassNameFromSchemafile($temp->schemaDefinition)]);
+        }
     }
-
-
-    if($objItem->metadata != NULL){
-        $fulldataset[] = $record + prepareMetadata($objItem,$conn);
-    }else{
-        $fulldataset[] = $record + [];
-    }
-
+    
 }
 
 
@@ -188,7 +197,7 @@ function getClassNameFromSchemafile($path){
 
 header('Content-Type: application/json; charset=utf-8');
 echo(json_encode($fulldataset));
-
+//var_dump($fulldataset);
 $conn->close();
 
 ?>
