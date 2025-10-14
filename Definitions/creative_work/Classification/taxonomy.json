@@ -1,0 +1,16 @@
+{
+   "version":"1",
+   "hierarchy":[
+       {
+           "label":"Collection",
+           "definition":"collection.json",
+           "sub_classes":[
+                {
+                    "label":"Type",
+                    "definition":"type.json",
+                    "sub_classes":[]
+                }
+           ]
+       }
+   ] 
+}

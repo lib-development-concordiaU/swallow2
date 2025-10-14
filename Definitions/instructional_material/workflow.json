@@ -1,0 +1,178 @@
+{
+    "name":"instructional_material",
+    "schema_version" : "instruction_material",
+    
+    "steps":[        
+    
+        {
+            "name": "General",
+            "type":"single",
+            "help":"",
+            "fields":[
+                {
+                    "name": "title",
+                    "type":"longtext"
+                },
+    
+                {
+                    "name":"image",
+                    "type":"uploadFile"
+                },
+                {
+                    "name":"audio file URL",
+                    "type":"shorttext"
+                },
+                {
+                    "name":"document",
+                    "type":"uploadFile"
+                },
+                {
+                    "name": "description",
+                    "type":"longtext"
+                },
+                {
+                    "name":"time to complete",
+                    "type":"shorttext"
+                },
+                {
+                    "name":"visibility",
+                    "type":"dropdown|vocabulary",
+                    "source":"Vocabulary/visibility.json"
+                }
+               
+            ]
+        },
+        {
+            "name": "Pool",
+            "type":"single",
+            "help":"",
+            "fields":[
+                {
+                    "name": "Question",
+                    "type":"longtext"
+                },
+    
+                {
+                    "name": "option",
+                    "type":"shorttext",
+                    "multiple":"yes"
+                }
+            ]
+        },
+        {
+            "name": "Content",
+            "type":"multiple",
+            "help":"",
+            "fields":[
+                {
+                    "name": "title",
+                    "type":"shorttext"
+                },
+                {
+                    "name": "text",
+                    "type":"lookup-convert-longtext",
+                    "source":"Widgets/wysiwyg/index.html"
+                },
+    
+                {
+                    "name":"image",
+                    "type":"uploadFile"
+                },
+
+                {
+                    "name":"image alt text",
+                    "type":"longtext"
+                },
+                {
+                    "name":"image caption",
+                    "type":"shorttext"
+                },
+    
+                {
+                    "name": "videoURL",
+                    "type":"shorttext"
+                },
+                {
+                    "name":"video caption",
+                    "type":"shorttext"
+                },
+                {
+                    "name": "interactive activity",
+                    "type":"longtext"
+                },
+                {
+                    "name": "interactive activity CAT",
+                    "type":"shorttext"
+                },
+                {
+                    "name":"order",
+                    "type":"shorttext"
+                }
+            ]
+        },
+
+        {
+            "name": "Activities",
+            "type":"multiple",
+            "help":"",
+            "fields":[
+                {
+                    "name": "purpose",
+                    "type":"longtext"
+                },
+                {
+                    "name": "task",
+                    "type":"longtext"
+                },
+    
+                {
+                    "name":"time",
+                    "type":"shorttext"
+                },
+    
+                {
+                    "name": "next",
+                    "type":"longtext"
+                }
+            ]
+        },
+        {
+            "name": "Resources",
+            "type":"multiple",
+            "help":"",
+            "fields":[
+                {
+                    "name": "title",
+                    "type":"longtext"
+                },
+                {
+                    "name": "text",
+                    "type":"longtext"
+                },
+    
+                {
+                    "name":"icon",
+                    "type":"dropdown|vocabulary",
+                    "source":"Vocabulary/instruction-icon.json"
+                },
+    
+                {
+                    "name": "url",
+                    "type":"shorttext"
+                }
+            ]
+        },
+        {
+            "name": "References",
+            "type":"multiple",
+            "help":"",
+            "fields":[
+                {
+                    "name": "citation",
+                    "type":"longtext"
+                }
+            ]
+        }
+    ]
+    
+}

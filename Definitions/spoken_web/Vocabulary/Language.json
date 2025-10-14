@@ -1,0 +1,20 @@
+{
+	"values": [
+        {
+            "label":"English"
+        },
+        {
+            "label":"French"
+        },
+        {
+            "label":"English, French"
+        },
+        {
+            "label":"English, French, Spanish"
+        },
+        {
+            "label":"English, Cree"
+        }
+        
+    ]
+}

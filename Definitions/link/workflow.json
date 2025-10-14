@@ -1,0 +1,71 @@
+{
+    "name":"link",
+    "schema_version" : "link",
+    
+    "steps":[        
+    
+        {
+            "name": "Item_Description",
+            "type":"single",
+            "help":"",
+            "fields":[
+                {
+                    "name": "title",
+                    "type":"longtext"
+                },
+
+                {
+                    "name": "author",
+                    "type":"shorttext",
+                    "multiple":"yes"
+                },
+    
+                {
+                    "name":"image",
+                    "type":"uploadFile"
+                },
+    
+                {
+                    "name": "description",
+                    "type":"lookup-convert-longtext",
+                    "source":"Widgets/wysiwyg/index.html"
+                },
+
+                {
+                    "name": "link",
+                    "type":"shorttext"
+                },
+
+                {
+                    "name": "publication date",
+                    "type":"shorttext"
+                },
+
+                {
+                    "name": "category",
+                    "type":"lookup",
+					"source":"Widgets/autocomplete/index.html",
+                    "multiple":"yes"
+                },
+
+                {
+                    "name": "length",
+                    "type":"shorttext"
+                },
+                {
+                    "name": "source",
+                    "type":"shorttext"
+                },
+                {
+                    "name": "format",
+                    "type":"dropdown|vocabulary",
+                    "source":"Vocabulary/format.json"
+                }
+
+                
+    
+            ]
+        }
+    ]
+    
+}

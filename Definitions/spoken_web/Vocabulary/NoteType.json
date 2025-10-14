@@ -1,0 +1,16 @@
+{
+	"values": [
+        {
+            "label":"General"
+        },
+        {
+            "label":"Related Version"
+        },
+        {
+            "label":"Cataloguer"
+        },
+        {
+            "label":"Preservation"
+        }
+    ]
+}

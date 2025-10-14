@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>WYSIWYG Editor</title>
+        <!-- Add the theme's stylesheet -->
+        <script src="suneditor.min.js"></script>
+        <link rel="stylesheet" href="css/suneditor.min.css" />
+        <style>
+            
+            .sun-editor .se-container {
+                height: 95%;
+            }
+        </style>
+    </head>
+
+    <body >
+        <div id="editor">
+            
+        </div>
+        
+    </body>
+
+    <script>
+       var editor = SUNEDITOR.create('editor', {
+            height:350,
+            width: 530,
+            buttonList: [
+                ['undo', 'redo'],
+                ['font', 'fontSize', 'formatBlock'],
+                ['bold', 'underline', 'italic'],
+                ['fontColor'],
+                ['align', 'horizontalRule', 'list', 'lineHeight'],
+                ['table', 'link', 'image', 'video', 'audio'],
+                ['codeView'],
+                ['save']
+            ],
+            callBackSave: function(){
+                var content = editor.getContents();
+                var textField = window.parent.document.getElementById(textfield_id);
+                textField.value = content;
+                
+            }
+        });
+
+        const params = new URLSearchParams(window.location.search);
+        var textfield_id = params.get('id');
+
+        var textField = window.parent.document.getElementById(textfield_id);
+        editor.setContents(textField.value);
+    
+    </script>
+
+    
+    </html>

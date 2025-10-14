@@ -1,0 +1,32 @@
+{
+	"values": [
+        {
+            "label":"Audiobook"
+        },
+        {
+            "label":"Broadcast"
+        },
+        {
+            "label":"Classroom recording"
+        },
+        {
+            "label":"Documentary recording"
+        },
+        {
+            "label":"Home recording"
+        },
+        {
+            "label":"Internet recording"
+        },
+        {
+            "label":"Lab recording"
+        },
+        {
+            "label":"Studio recording"
+        },
+        {
+            "label":"Podcast"
+        }
+        
+    ]
+}

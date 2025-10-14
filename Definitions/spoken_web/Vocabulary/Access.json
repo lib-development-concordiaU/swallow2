@@ -1,0 +1,14 @@
+{
+	"values": [
+        {
+            "label":"Closed"
+        },
+        {
+            "label":"Streaming"
+        },
+        {
+            "label":"Streaming and download"
+        }
+
+    ]
+}

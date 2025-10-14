@@ -1,0 +1,69 @@
+{
+    "name":"News",
+    "schema_version" : "news",
+    
+    "steps":[        
+    
+        {
+            "name": "Item_Description",
+            "type":"single",
+            "help":"",
+            "fields":[
+                {
+                    "name": "title",
+                    "type":"longtext"
+                },
+                {
+                    "name": "abstract",
+                    "type":"lookup-convert-longtext",
+                    "source":"Widgets/wysiwyg/index.html"
+                },
+    
+                {
+                    "name":"image",
+                    "type":"uploadFile"
+                },
+                {
+                    "name":"Image credit",
+                    "type":"longtext"
+                },
+    
+                {
+                    "name": "text",
+                    "type":"lookup-convert-longtext",
+                    "source":"Widgets/wysiwyg/index.html"
+                },
+                {
+                    "name": "author",
+                    "type":"longtext"
+                },
+                {
+                    "name": "author URL",
+                    "type":"longtext"
+                },
+                {
+                    "name": "date published",
+                    "type":"shorttext"
+                },
+
+                {
+                    "name": "identifier",
+                    "type":"shorttext"
+                },
+                {
+                    "name": "QR_code",
+                    "type":"lookup",
+                    "source":"Widgets/qr_generator/index.html"
+                },
+
+                {
+                    "name": "keywords",
+                    "type":"lookup",
+					"source":"Widgets/keywords/index.html",
+                    "multiple":"yes"
+                }
+            ]
+        }
+    ]
+    
+}

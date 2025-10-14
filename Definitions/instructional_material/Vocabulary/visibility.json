@@ -1,0 +1,12 @@
+{
+    "values": [
+        { "label": "visibility:unpublished"
+    
+        },
+        { "label" : "visibility:published"
+        },
+        { 
+            "label" : "visibility:feature"
+        }
+    ]
+}

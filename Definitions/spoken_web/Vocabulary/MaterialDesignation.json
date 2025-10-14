@@ -1,0 +1,49 @@
+{
+	"values": [
+        {
+            "label":"Reel to Reel"
+        },
+        {
+            "label":"Cassette"
+        },
+        {
+            "label":"Microcassette"
+        },
+        {
+            "label":"Wire"
+        },
+        {
+            "label":"DAT"
+        },
+        {
+            "label":"Disc"
+        },
+        {
+            "label":"Floppy Disk"
+        },
+        {
+            "label":"CD"
+        },
+        {
+            "label":"Minidisc"
+        },
+        {
+            "label":"Cylinder"
+        },
+        {
+            "label":"U-Matic"
+        },
+        {
+            "label":"Betamax"
+        },
+        {
+            "label":"VHS"
+        },
+        {
+            "label":"Hi8"
+        },
+        {
+            "label":"MiniDV"
+        } 
+    ]
+}

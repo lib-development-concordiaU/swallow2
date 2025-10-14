@@ -1,0 +1,35 @@
+{
+    "name":"collection",
+    "version":"1",
+    "fields":[ 
+        {
+            "name":"Contributing Unit",
+            "type":"shorttext"
+        },
+        {
+            "name":"Source Collection",
+            "type":"shorttext"
+        },
+        {
+            "name":"Source Collection Description",
+            "type":"longtext"
+        },
+        {
+            "name":"Source Collection ID",
+            "type":"shorttext"
+        },
+
+        {
+            "name":"Persistent URL",
+            "type":"shorttext"
+        },
+        {
+            "name":"Collection Image URL",
+            "type":"shorttext"
+        },
+        {
+            "name":"Old Swallow1 ID",
+            "type":"shorttext"
+        }
+    ]
+}

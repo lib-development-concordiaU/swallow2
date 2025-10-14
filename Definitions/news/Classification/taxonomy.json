@@ -1,0 +1,10 @@
+{
+   "version":"1",
+   "hierarchy":[
+       {
+           "label":"Categories",
+           "definition":"class.json",
+           "sub_classes":[]
+       }
+   ] 
+}

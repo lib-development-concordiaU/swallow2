@@ -1,0 +1,196 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link href="styles.css" rel="stylesheet" type="text/css">
+        <title>Wikidata Annotations</title>
+
+    </head>
+    <body>
+
+        <div class="container-fluid" >
+
+            <div class="row">
+                <div class='col leftColumn' id='leftColumn'>
+                    <textarea id='textContainer'></textarea>
+                </div>
+
+                <div class='col-1' style='width: 5%;' id='centerColumm'>
+                    <div class='vertical-center'>
+                        <button class="btn btn-secondary custom-btn" onclick="loadTextHadler()"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                              </svg>
+                        </button> 
+                        <br />
+                        
+                        <div id="middle-spinner" class="visually-hidden" style="margin-top: 10px;"> 
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary custom-btn" onclick="refreshTextAnnotationsHandler()"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                              </svg>
+                        </button>
+                    </div>   
+                </div>
+
+                <div class='col' id='rightColumn'>
+                    <div id='lookup-container'>
+                        <div class="input-group mb-3">
+                            <input id='lookup-query' type="text" class="form-control" placeholder="Wikidata Lookup" aria-label="Wikidata Lookup" aria-describedby="button-addon">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon" onclick="lookupHandler()" data-bs-toggle="modal" data-bs-target="#lookupModal" >Lookup</button>
+                        </div>
+                    </div>
+
+<!-- ************************  LOOKUP MODAL  ************************************************************** -->
+                    <div class="modal fade" id="lookupModal" tabindex="-1" aria-labelledby="lookupModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="lookupModalLabel">Wikidata Results</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <span id='lookup-spinner' class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                <div class="container-fluid" id='lookupModal-results'>
+
+                                </div>
+                                
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+<!-- ******************************************************************************************************** -->
+
+                    <div id='wikidata-tabs'>                
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                              <button class="nav-link active" id="nav-persons-tab" data-bs-toggle="tab" data-bs-target="#nav-persons" type="button" role="tab" aria-controls="nav-persons" aria-selected="true">Persons <span id='persons-counter'>(0)</span></button>
+
+                              <button class="nav-link" id="nav-places-tab" data-bs-toggle="tab" data-bs-target="#nav-places" type="button" role="tab" aria-controls="nav-places" aria-selected="false">Places <span id='places-counter'>(0)</span></button>
+
+                              <button class="nav-link" id="nav-written-work-tab" data-bs-toggle="tab" data-bs-target="#nav-written-work" type="button" role="tab" aria-controls="nav-written-work" aria-selected="false">Written Work <span id='ww-counter'>(0)</span></button>
+
+                              <button class="nav-link" id="nav-others-tab" data-bs-toggle="tab" data-bs-target="#nav-others" type="button" role="tab" aria-controls="nav-others" aria-selected="false">Others <span id='others-counter'>(0)</span></button>
+
+                            </div>
+                          </nav>
+                    </div>
+
+                    <div id='entities'>
+
+                        <div class="tab-content" id="nav-tabContent">
+                            
+                            <div class="tab-pane fade show active custom-tab" id="nav-persons" role="tabpanel" aria-labelledby="nav-persons-tab">
+                                <p>Use this utility to find known <b>Persons</b> using DBpedia Spotlight NER</p>
+                                <button class='btn btn-primary' onclick = 'findPersonsHandler()'>
+                                    Find Persons
+                                    <span id='find-person-spinner' class="spinner-border spinner-border-sm visually-hidden" role="status" aria-hidden="true"></span>
+                                </button>
+                                <hr />
+                                <div id='persons-tab-entities'></div>
+                            </div>
+
+                            <div class="tab-pane fade custom-tab" id="nav-places" role="tabpanel" aria-labelledby="nav-places-tab">
+                                <p>Use this utility to find known <b>Places</b> using DBpedia Spotlight NER</p>
+                                <button class='btn btn-primary' onclick = 'findPlacesHandler()'>
+                                    Find Places
+                                    <span id='find-places-spinner' class="spinner-border spinner-border-sm visually-hidden" role="status" aria-hidden="true"></span>
+                                </button>
+                                <hr />
+                                <div id='places-tab-entities'></div>
+                            </div>
+                            
+                            <div class="tab-pane fade custom-tab" id="nav-written-work" role="tabpanel" aria-labelledby="nav-written-work-tab">
+                                <p>Use this utility to find known <b>Written Work</b> using DBpedia Spotlight NER</p>
+                                <button class='btn btn-primary' onclick = 'findWWHandler()'>
+                                    Find Written Works
+                                    <span id='find-ww-spinner' class="spinner-border spinner-border-sm visually-hidden" role="status" aria-hidden="true"></span>
+                                </button>
+                                <hr />
+                                <div id='ww-tab-entities'></div>
+                            </div>
+
+                            
+                            <div class="tab-pane fade custom-tab" id="nav-others" role="tabpanel" aria-labelledby="nav-others-tab">
+                                <p>Use this utility to find any <b>known entity</b> using DBpedia Spotlight NER</p>
+                                <button class='btn btn-primary' onclick = 'findAllHandler()'>
+                                    Find All
+                                    <span id='find-all-spinner' class="spinner-border spinner-border-sm visually-hidden" role="status" aria-hidden="true"></span>
+                                </button>
+                                <hr />
+                                <div id='other-tab-entities'></div>
+                            </div>
+
+                        </div>   
+                    </div>
+
+            </div>
+        </div> 
+        
+
+        <!-- Card template -->
+        <template id='entity-card-template'>
+            <div class="card" style="width: 200px; float:left; margin-left: 10px; overflow: hidden; margin-top: 10px;">
+                <div class="card-body" style="height: 200px;">
+                  <p class="card-title" ><b id='label'></b></p>
+                  <p class="card-subtitle mb-2 text-muted small" id='qcode'></p>
+                  <p class="card-text small" id='description'></p>
+                </div>
+                <div class="card-body" style="text-align: right;">
+                    <a id='remove-btn' href="#" class="btn btn-primary" onclick=''>Remove</a>
+                </div>
+            </div>
+        </template>   
+
+        <!--  Lookup results template -->
+        <template id='lookup-result'>
+            <div class='row result-row'>
+                <div class="col-md-10">
+                    <b><h5 id='lookup-title'></h5></b>
+                    <p>[ <small id='lookup-url'> </small> ] <br />
+                    <small id='lookup-description'> </small></p>
+                </div>
+                <div class="col-md-2">
+                    <a id='add-btn' name='' href="#" class="btn btn-primary" onclick=''>Add</a>
+                </div>         
+            </div>
+
+        </template>
+
+    </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="index.js" ></script>
+    <!-- Global variables declarations-->
+    <script>
+        var GLOBAL_entities = [];
+        var GLOBAL_lookupResults = [];
+        var GLOBAL_textClean = '';
+        var GLOBAL_textAnnotated = '';
+        var GLOBAL_textHighlighted = '';
+    </script>
+    <script src="Model/textFormatter.js"></script>
+    <script>
+        var textField = null;
+
+        function save() {
+            textField.value = document.getElementById("textContainer").value;
+        }
+
+        function init() {
+            const urlParams = new URLSearchParams(window.location.search);
+            var textfield_id = urlParams.get('id');
+            textField = window.parent.document.getElementById(textfield_id);
+            document.getElementById("textContainer").value = textField.value;
+        }
+
+        init();
+    </script>
+</html>

@@ -1,0 +1,28 @@
+{
+    "values": [
+      {
+        "label": "Sound Recording",
+        "uri": "https://www.wikidata.org/wiki/Q5057302"
+      },
+      {
+        "label": "Video Recording",
+        "uri": "https://www.wikidata.org/wiki/Q30070675"
+      },
+      {
+        "label": "Poster",
+        "uri": "https://www.wikidata.org/wiki/Q429785"
+      },
+      {
+        "label": "Photograph",
+        "uri": "https://www.wikidata.org/wiki/Q125191"
+      },
+      {
+        "label": "Document",
+        "uri": "https://www.wikidata.org/wiki/Q49848"
+      },
+      {
+        "label": "Artefact",
+        "uri": "https://www.wikidata.org/wiki/Q8205328"
+      }
+    ]
+  }

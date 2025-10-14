@@ -12,7 +12,6 @@ require_once "../Model/metadata.php";
 DESCRIPTION: Traverses all metadata fields values on the item and adds the uri from the vocabulary file
 */
 
-
 function prepareMetadata($in_item,$in_conn){
     //load the schema
     $objWorkflow = new Workflow($in_conn);    
@@ -126,9 +125,13 @@ $objCataloguer = new Cataloguer($conn);
 
 
 $fulldataset = [];
+
+
+
 for($i = 0; $i < $objItem->total;$i++){
     $record = [];
     $objItem->go($i);
+    
     if($objItem->export == true){
         $objCataloguer = new Cataloguer($conn);
         $record["schema"] = "Swallow JSON";
@@ -151,7 +154,8 @@ for($i = 0; $i < $objItem->total;$i++){
 
         $objClass = new Clase($conn);
         $objClass->select($objItem->class_id);
-    
+        
+        
         if($objClass->export){
             $record["classification"][] = array_merge($objClass->getMetadataArray(),["class_name"=>getClassNameFromSchemafile($objClass->schemaDefinition)]); 
             
@@ -159,8 +163,8 @@ for($i = 0; $i < $objItem->total;$i++){
             $temp = new Clase($conn);
 
             $export = true;
-            foreach($objClass->ancentry as $ancestor){
-                if($export){
+            foreach($objClass->ancentry as $ancestor){    
+                if($export){    
                     $temp->select($ancestor["id"]);
                     if($temp->export == 0){
                         $export = false;
@@ -177,8 +181,6 @@ for($i = 0; $i < $objItem->total;$i++){
                     $fulldataset[] = $record + [];
                 } 
             }
-
-
         }
     }
     
@@ -197,7 +199,7 @@ function getClassNameFromSchemafile($path){
 
 header('Content-Type: application/json; charset=utf-8');
 echo(json_encode($fulldataset));
-//var_dump($fulldataset);
+
 $conn->close();
 
 ?>

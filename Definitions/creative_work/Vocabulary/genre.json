@@ -1,0 +1,44 @@
+{
+	"values": [
+        {
+            "label":"Novel"
+        },
+        {
+            "label":"Poem"
+        },
+        {
+            "label":"Short Story"
+        },
+        {
+            "label":"Play"
+        },
+        {
+            "label":"Essay"
+        },
+        {
+            "label":"Biography"
+        },
+        {
+            "label":"Autobiography"
+        },
+        {
+            "label":"Memoir"
+        },
+        {
+            "label":"Non-Fiction"
+        },
+        {
+            "label":"Fiction"
+        },
+        {
+            "label":"Anthology"
+        },
+        {
+            "label":"Graphic Novel"
+        },
+        {
+            "label":"Legal Document"
+        }
+        
+    ]
+}

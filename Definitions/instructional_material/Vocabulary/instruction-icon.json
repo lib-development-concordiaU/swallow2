@@ -1,0 +1,28 @@
+{
+	"values": [
+        {
+            "label":"Web Page",
+            "uri":"https://library.concordia.ca/apps/swallow2/Definitions/xthing/Assests/icon-webpage.png"
+        },
+        {
+            "label":"Udemy Course",
+            "uri":"https://library.concordia.ca/apps/swallow2/Definitions/xthing/Assests/icon-udemy.png"
+        },
+        {
+            "label":"Book",
+            "uri":"https://library.concordia.ca/apps/swallow2/Definitions/xthing/Assests/icon-book.png"
+        },
+        {
+            "label":"Journal Article",
+            "uri":"https://library.concordia.ca/apps/swallow2/Definitions/xthing/Assests/icon-article.png"
+        },
+        {
+            "label":"Video",
+            "uri":"https://library.concordia.ca/apps/swallow2/Definitions/xthing/Assests/icon-movie.png"
+        },
+        {
+            "label":"Podcast",
+            "uri":"https://library.concordia.ca/apps/swallow2/Definitions/xthing/Assests/icon-podcast.png"
+        }
+    ]
+}

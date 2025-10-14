@@ -1,0 +1,80 @@
+{
+	"values": [
+        {
+            "label":"Ambient sounds"
+        },
+        {
+            "label":"Autobiographical sound recordings"
+        },
+        {
+            "label": "Conversation"
+        },
+        {
+            "label":"Interview"
+        },
+        {
+            "label":"Letter"
+        },
+        {
+            "label": "Oral History"
+        },
+        {
+            "label":"Oral Storytelling"
+        },
+        {
+            "label":"Music"
+        },
+        {
+            "label":"Performance: Improvised speech"
+        },
+        {
+            "label":"Performance: Sound Poetry"
+        },
+        {
+            "label":"Performance: Spoken Word Poetry"
+        },
+        {
+            "label":"Performance: Sound Poetry, Music"
+        },
+        {
+            "label":"Podcast: Audio Essay"
+        },
+        {
+            "label":"Podcast: Narrative"
+        },
+        {
+            "label":"Reading: Drama"
+        },
+        {
+            "label":"Reading: Fiction"
+        },
+        {
+            "label":"Reading: Non-Fiction"
+        },
+        {
+            "label":"Reading: Poetry"
+        },
+        {
+            "label":"Soundscapes"
+        },
+        {
+            "label":"Speeches: Commemorative works"
+        },
+        {
+            "label":"Speeches: Panels"
+        },
+        {
+            "label":"Speeches: Question-and-answer period"
+        },
+        {
+            "label":"Speeches: Talks"
+        },
+        {
+            "label":"Text-sound compositions"
+        },
+        {
+            "label":"Workshops (seminars)"
+        }
+        
+    ]
+}

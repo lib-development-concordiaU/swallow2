@@ -1,0 +1,28 @@
+{
+   "version":"1",
+   "hierarchy":[
+       {
+           "label":"partner_institution",
+           "definition":"partner_institution.json",
+           "sub_classes":[
+				{
+				"label":"collection",
+				"definition":"collection.json",
+				"sub_classes":[
+                    {
+                        "label":"series",
+                        "definition":"series.json",
+                        "sub_classes" :[
+                            {
+                                "label":"subseries",
+                                "definition":"subseries.json",
+                                "sub_classes":[]
+                            }
+                        ]
+                    }
+                ]
+				}
+			]
+       }
+   ] 
+}

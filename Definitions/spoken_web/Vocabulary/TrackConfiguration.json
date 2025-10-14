@@ -1,0 +1,25 @@
+{
+	"values": [
+        {
+            "label":"Half-track"
+        },
+        {
+            "label":"Quarter-track"
+        },
+        {
+            "label":"2 track"
+        },
+        {
+            "label":"4 track"
+        },
+        {
+            "label":"8 track"
+        },
+        {
+            "label":"16 track"
+        },
+        {
+            "label":"24 track"
+        }  
+    ]
+}

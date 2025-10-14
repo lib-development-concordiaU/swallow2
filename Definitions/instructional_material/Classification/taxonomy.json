@@ -1,0 +1,11 @@
+{
+   "version":"1",
+   "hierarchy":[
+       {
+           "label":"Topic",
+           "definition":"instruction-topic.json",
+           "sub_classes":[
+			]
+       }
+   ] 
+}

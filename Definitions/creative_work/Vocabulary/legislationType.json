@@ -1,0 +1,22 @@
+{
+    "values":[
+        {
+            "label":"Birth Certificate"
+        },
+        {
+            "label":"Death Certificate"
+        },
+        {
+            "label":"Baptism Certificate"
+        },
+        {
+            "label":"Confirmation Certificate"
+        },
+        {
+            "label":"Marriage Certificate"
+        },
+        {
+            "label":"other"
+        }
+    ]
+}

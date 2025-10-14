@@ -1,0 +1,14 @@
+SELECT ?uri ?label 
+WHERE
+{
+  {?uri wdt:P279 wd:Q7930989} #City/Town (General)
+  UNION
+  {?uri wdt:P279 wd:Q27676416} # City/Town (Quebec)
+  UNION
+  {?uri wdt:P279 wd:Q1048835} # political territorial entity
+  UNION 
+  {?uri wdt:P279 wd:Q2879} # province or territory of Canada
+  OPTIONAL {
+     ?uri rdfs:label ?label filter (lang(?label) = "en").
+   }
+ }

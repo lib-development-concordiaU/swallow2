@@ -1,0 +1,32 @@
+{
+	"values": [
+        {
+            "label":"Aluminum"
+        },
+        {
+            "label":"Magnetic Tape"
+        },
+        {
+            "label":"Magnetic Disk"
+        },
+        {
+            "label":"Vinyl"
+        },
+        {
+            "label":"Lacquer"
+        },
+        {
+            "label":"Shellac"
+        },
+        {
+            "label":"Wax"
+        },
+        {
+            "label":"Laser"
+        },
+        {
+            "label":"Magneto-Optical"
+        }
+        
+    ]
+}

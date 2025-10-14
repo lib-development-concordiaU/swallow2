@@ -1,0 +1,25 @@
+{
+	"values": [
+        {
+            "label":"Workshop"
+        },
+        {
+            "label":"Library Learning Module"
+        },
+        {
+            "label":"Udemy Course"
+        },
+        {
+            "label":"Web page"
+        },
+        {
+            "label":"Book"
+        },
+        {
+            "label":"Journal Article"
+        },
+        {
+            "label":"Database"
+        }
+    ]
+}

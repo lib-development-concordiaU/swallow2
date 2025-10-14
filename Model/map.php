@@ -47,6 +47,7 @@ class Map{
     
     function getSourceValueCSV($target_schema_key,$source_record,$id = 0){
         $result = [];
+        $cont = 0;
         foreach($this->fieldmap as $pair ){       
             if(str_ireplace(' ','_',$pair['target_field']) == str_ireplace(' ','_',$target_schema_key)){
                 $key= $pair['source_field'];
@@ -162,6 +163,7 @@ class Map{
     function getSourceValue($target_schema_key,$source_record,$format,$id = 0){
         switch ($format) {
             case 'CSV':
+                
                 $result = $this->getSourceValueCSV($target_schema_key,$source_record,$id);
                 
                 if( count($result) == 0 ){
@@ -214,6 +216,7 @@ class Map{
         $error = '';
 
         // GET the cataloger information
+        
         $val = $this->getSourceValue('Cataloguer.email',$source_record,$format ); 
       
         if($val== ''){

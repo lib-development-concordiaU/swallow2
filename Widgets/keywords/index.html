@@ -1,0 +1,40 @@
+<html>
+    
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">      
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">  
+        <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+
+    </head>
+
+    <body>
+        <div style="max-width: 500px; padding: 20px;">
+            
+            <h1 style="width: 100%; text-align: center; margin-bottom: 30px;">News Keywords</h1>
+            
+            <div class="input-group">
+                <input type="text" class="form-control" id='category' name='category' placeholder="start writing">
+                <span class="input-group-btn">
+                    <button class="btn btn-default"" onclick="addCategory()">Add keyword</button>
+                </span>
+            </div>
+
+            <hr />
+            
+            <div id='alert' class="alert" role="alert" style="display: none;">
+                <div id='msg'></div>
+            </div>
+
+            <div id='imageContainer' style="text-align: center;">
+                
+            </div>        
+        </div>
+        
+    </body>
+
+</html>
+<script src='main.js'></script>

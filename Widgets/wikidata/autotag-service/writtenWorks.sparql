@@ -1,0 +1,12 @@
+SELECT ?uri ?label 
+WHERE
+{
+  {?uri wdt:P279 wd:Q482 } #poetry and subclasses
+  UNION
+  {?uri wdt:P279 wd:Q7725634} #literary work and subclasses
+  UNION
+  {?uri wdt:P279 wd:Q47461344}. #written work and subclasses
+  OPTIONAL {
+     ?uri rdfs:label ?label filter (lang(?label) = "en").
+   }
+ }

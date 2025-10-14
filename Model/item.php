@@ -293,7 +293,7 @@ class Item extends db{
             $offset = ($page -1) * $page_size;
             $limit = " LIMIT $offset,$page_size";
         }else{
-           $limit = " LIMIT 10000";
+           $limit = " LIMIT 1000";
         }
 
         $conditions = '';
@@ -307,7 +307,7 @@ class Item extends db{
             foreach ($tokens as $token){
      
                 if($token != ''){
-                    $whereClause .= "(";
+                   // $whereClause .= "(";
                     if(in_array(trim($token),$operators) ){
                         $whereClause .= " ".$token." ";
                     } else{
@@ -315,7 +315,7 @@ class Item extends db{
                         $whereClause .= "JSON_SEARCH(item.metadata,'all','%".trim($token)."%') IS NOT NULL ";
                     }
 
-                    $whereClause .= ")";
+                    //$whereClause .= ")";
                 }
 
                 

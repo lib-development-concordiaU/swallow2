@@ -1,0 +1,631 @@
+[
+    {
+        "uri": "http://www.wikidata.org/entity/Q7930989",
+        "label": "city/town"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q27676416",
+        "label": "city/town"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q1048835",
+        "label": "political territorial entity"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q2879",
+        "label": "province or territory of Canada"
+    },
+    
+    {
+        "uri": "http://www.wikidata.org/entity/Q458",
+        "label": "European Union"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q83057",
+        "label": "region of Belgium"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q83116",
+        "label": "province of Belgium"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q89934",
+        "label": "community of Belgium"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q106658",
+        "label": "district"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q515",
+        "label": "city"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q159438",
+        "label": "Hero City"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q162620",
+        "label": "province of Spain"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q2879",
+        "label": "province or territory of Canada"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q3957",
+        "label": "town"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q134390",
+        "label": "province of the Netherlands"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q158683",
+        "label": "province of Afghanistan"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q174844",
+        "label": "megacity"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q179997",
+        "label": "Thirteen Colonies"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q7275",
+        "label": "state"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q193512",
+        "label": "region of Finland"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q191093",
+        "label": "province of South Africa"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q192299",
+        "label": "county of Norway"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q331644",
+        "label": "Khanate"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q353344",
+        "label": "countship"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q185086",
+        "label": "Crown dependency"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q15284",
+        "label": "municipality"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q5098",
+        "label": "province of Indonesia"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q6256",
+        "label": "country"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q22721",
+        "label": "Regierungsbezirk"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q38911",
+        "label": "region of the Czech Republic"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q200547",
+        "label": "county of Sweden"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q203300",
+        "label": "municipality of Liechtenstein"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q426759",
+        "label": "League of Nations mandate"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q475050",
+        "label": "federal district"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q478847",
+        "label": "Amt"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q187587",
+        "label": "empire"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q187768",
+        "label": "cities and towns in Russia"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q851110",
+        "label": "district of Budapest"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q855451",
+        "label": "administrative territorial entity of Poland"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q861184",
+        "label": "region of Peru"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q10742",
+        "label": "autonomous community of Spain"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q643815",
+        "label": "metropolitan or non-metropolitan county of England"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q692581",
+        "label": "holy city"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q697390",
+        "label": "vegueria"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q701661",
+        "label": "administrative division of Taiwan"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q734818",
+        "label": "condominium"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q485258",
+        "label": "federative unit of Brazil"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q642961",
+        "label": "Reichsgau"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q15253706",
+        "label": "like a city"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q15584664",
+        "label": "city under municipality jurisdiction in Latvia"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q15630895",
+        "label": "district of the German Democratic Republic"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q15663836",
+        "label": "local administrative unit in Thailand"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q15849374",
+        "label": "subdistrict of the German Democratic Republic"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q15978299",
+        "label": "municipality with town privileges in the Czech Republic"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q896881",
+        "label": "city with tens of thousands of inhabitants"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q902814",
+        "label": "border town"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q937876",
+        "label": "comarca of Catalonia"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q207299",
+        "label": "administrative region of Greece"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q41156",
+        "label": "administrative territorial entity of South Korea"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q2758248",
+        "label": "District Councils of India"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q2824648",
+        "label": "province of Vietnam"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q2919801",
+        "label": "municipality of Luxembourg"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q3076994",
+        "label": "commune of Cameroon"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q3179682",
+        "label": "historical territory"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q1350310",
+        "label": "administrative territorial entity of the Philippines"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q1352230",
+        "label": "territory of the United States"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q1394476",
+        "label": "civil township"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q209325",
+        "label": "region of Belarus"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q216712",
+        "label": "region of New Zealand"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q50198",
+        "label": "province of Thailand"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q788176",
+        "label": "autonomous administrative territorial entity"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q223832",
+        "label": "dominion of the British Empire"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q250050",
+        "label": "department of Bolivia"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q44753",
+        "label": "province of Argentina"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q1776764",
+        "label": "județ"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q1798622",
+        "label": "governorate"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q1801891",
+        "label": "state of the German Democratic Republic"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q1839674",
+        "label": "lands inhabited by indigenous peoples"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q985073",
+        "label": "United Nations trust territory"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q1025116",
+        "label": "province of the Solomon Islands"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q1053630",
+        "label": "province of Papua New Guinea"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q15089",
+        "label": "province of Italy"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q21190155",
+        "label": "libero consorzio comunale"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q21272231",
+        "label": "county council area"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q26883974",
+        "label": "nomadic confederacy"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q27648928",
+        "label": "guayrato"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q27676416",
+        "label": "city or town"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q27676416",
+        "label": "city or town"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q50330360",
+        "label": "second largest city"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q15979307",
+        "label": "principal area of Wales"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q16724476",
+        "label": "town of Belarus"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q18398645",
+        "label": "types of towns and cities in Russia"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q18658211",
+        "label": "administrative territorial entity of Taiwan under Qing rule"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q20202352",
+        "label": "locality of Mexico"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q20724701",
+        "label": "city or town in Armenia"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q20724789",
+        "label": "general governorate"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q20856058",
+        "label": "landgraviate"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q46395",
+        "label": "British overseas territories"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q47168",
+        "label": "county of the United States"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q13410464",
+        "label": "county of Maryland"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q50218",
+        "label": "administrative territorial entity of the Republic of China"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q56059",
+        "label": "department of Uruguay"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q250811",
+        "label": "sub-province-level division"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q261023",
+        "label": "district of Vienna"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q3184121",
+        "label": "municipality of Brazil"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q3199141",
+        "label": "city of Indonesia"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q3266850",
+        "label": "commune"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q15110",
+        "label": "metropolitan city of Italy"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q1867183",
+        "label": "local government area of Australia"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q1907114",
+        "label": "metropolitan area"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q7930989",
+        "label": "city/town"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q9357527",
+        "label": "territory of Canada"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q10860585",
+        "label": "country within the Czech Republic"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q10864048",
+        "label": "first-level administrative country subdivision"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q1140229",
+        "label": "political union"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q1234255",
+        "label": "regional unit of Greece"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q3327899",
+        "label": "municipality of Ontario"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q3388523",
+        "label": "Pilseta"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q3408494",
+        "label": "list of proposed provinces and territories of Canada"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q3455524",
+        "label": "administrative region"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q3775649",
+        "label": "subdivision of Portugal"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q4286337",
+        "label": "city district"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q2043199",
+        "label": "district of Belarus"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q2177636",
+        "label": "municipality of Denmark"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q2179958",
+        "label": "district of Peru"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q2469744",
+        "label": "comarca of Navarre"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q2499134",
+        "label": "administrative division of the European Union"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q2520514",
+        "label": "Subdivisions of Galicia"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q2532278",
+        "label": "representative assembly"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q2630741",
+        "label": "community"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q2732840",
+        "label": "Gram panchayat"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q2749147",
+        "label": "Castellany"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q11394721",
+        "label": "Inland city"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q11828004",
+        "label": "province of Canada"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q11881845",
+        "label": "city"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q51929311",
+        "label": "largest city"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q56557504",
+        "label": "city of Iran"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q56557664",
+        "label": "şəhər"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q56856076",
+        "label": "combined authority area"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q65679908",
+        "label": "Populated centers of Peru"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q79323854",
+        "label": "city of oblast subordinance"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q79324274",
+        "label": "city of raion subordinance"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q4469598",
+        "label": "County of Moldova"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q4826857",
+        "label": "Autonomous province"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q4927168",
+        "label": "Block Panchayat"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q6063891",
+        "label": "partido"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q12051488",
+        "label": "populated place in Ukraine"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q12131624",
+        "label": "city in Ukraine"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q12356456",
+        "label": "viceroyalty"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q12479774",
+        "label": "second-level administrative country subdivision in Indonesia"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q13396669",
+        "label": "province-level division"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q84823091",
+        "label": "region of Ukraine"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q89487741",
+        "label": "city of Bulgaria"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q104117291",
+        "label": "region of Spain"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q104488513",
+        "label": "proposed city"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q106389302",
+        "label": "city in Russia"
+    },
+    {
+        "uri": "http://www.wikidata.org/entity/Q109650501",
+        "label": "puppet government"
+    }
+]

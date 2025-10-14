@@ -1,0 +1,10 @@
+{
+   "version":"1",
+   "hierarchy":[
+       {
+           "label":"Subject",
+           "definition":"web_service.json",
+           "sub_classes":[]
+       }
+   ] 
+}

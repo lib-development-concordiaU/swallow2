@@ -1,0 +1,113 @@
+{
+    "name":"creative_work",
+    "schema_version" : "creative_work",
+    
+    "steps":[        
+    
+        {
+            "name": "Item_Description",
+            "type":"single",
+            "help":"",
+            "fields":[
+                {
+                    "name": "title",
+                    "type":"longtext",
+                    "uri":"https://schema.org/name"
+                },
+    
+                {
+                    "name":"image",
+                    "type":"shorttext",
+                    "uri":"https://schema.org/image"
+                },
+    
+                {
+                    "name": "description",
+                    "type":"longtext",
+                    "uri":"https://schema.org/description"
+                },
+
+                {
+                    "name": "url",
+                    "type":"shorttext",
+                    "uri":"https://schema.org/url"
+                },
+                
+                {
+                    "name": "genre",
+                    "type":"dropdown|vocabulary",
+                    "source":"Vocabulary/genre.json",
+                    "uri": "https://schema.org/genre"
+                },
+
+                {
+                    "name": "document type",
+                    "type":"dropdown|vocabulary",
+                    "source":"Vocabulary/legislationType.json",
+                    "uri": "https://schema.org/legislationType"
+                },
+
+                {
+                    "name": "date Created",
+                    "type":"shorttext",
+                    "uri":"https://schema.org/dateCreated"
+                },
+
+                {
+                    "name": "date Published",
+                    "type":"shorttext",
+                    "uri":"https://schema.org/datePublished"
+                },
+
+                {
+                    "name": "Publisher",
+                    "type":"shorttext",
+                    "uri":""
+                },
+                {
+                    "name": "Publisher URL",
+                    "type":"shorttext",
+                    "uri":"https://schema.org/publisher"
+                }
+   
+            ]
+        },
+        {
+            "name":"author",
+            "type":"multiple",
+            "help":"",
+            "fields":[
+                {
+                    "name": "givenName",
+                    "type":"shorttext",
+                    "uri":"https://schema.org/givenName"
+                },
+                                        
+                {
+                    "name": "familyName",
+                    "type":"shorttext",
+                    "uri":"https://schema.org/familyName"
+                },  
+            
+                {
+                    "name": "url",
+                    "type":"shorttext",
+                    "uri":"https://schema.org/url"
+                }
+            ]
+        },
+        {
+            "name":"notes",
+            "type":"multiple",
+            "help":"",
+            "fields":[
+                {
+                    "name": "note",
+                    "type":"longtext",
+                    "uri":"https://schema.org/comment"
+                }
+            ]
+        }
+    ]
+    
+}
