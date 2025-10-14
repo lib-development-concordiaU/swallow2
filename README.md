@@ -8,6 +8,12 @@ The most distinctive characteristic of the Swallow architecture is the decouplin
 
 2. Follow the instructions on the [configuration section](https://github.com/lib-development-concordiaU/swallow2/wiki/2.-Configuration#database-and-other-configurations) located on the Wiki to configure the database and the schema definition files.
 
+## Docker version of Swallow
+A repository for the Dockerized version of Swallow is available here: https://github.com/fberrizbeitia/docker-swallow 
+
+## Acknowledgement of Swallow Version 1
+Version 1 (https://github.com/spokenweb/swallow) of Swallow was tied to the SpokenWeb Schema. 
+This repository is for the current (version2) Swallow that is a generalized solution to metadata management.
 
 ## Documentation
 [The repository wiki](https://github.com/lib-development-concordiaU/swallow2/wiki) has the full documentation. 
